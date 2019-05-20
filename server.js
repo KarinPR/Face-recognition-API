@@ -24,13 +24,7 @@ app.use(cors())
 
 
 
-app.get('/', (req, res)=> {
-	knex.select('*').from('users')
-		.then(users => {
-			res.json(users)
-		})
-		.catch(err => res.status(400).json('Check Database'))
-})
+app.get('/', (req, res)=> { res.send('Server uploaded successfully') })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, knex, bcrypt) });
 app.post('/register', (req, res) => { register.handleRegister(req, res, knex, bcrypt) });
