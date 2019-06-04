@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const knex = require('knex')({
   client: 'pg',
+  Access-Control-Allow-Origin: *,
   connection: {
     connectionString: process.env.DATABASE_URL,
     ssl: true,
